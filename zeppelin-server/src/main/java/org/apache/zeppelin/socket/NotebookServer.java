@@ -525,6 +525,7 @@ public class NotebookServer extends WebSocketServer implements
       note.addParagraph();
     }
     note.persist();
+    // AH:  This sends the updated note and paragraph back to webui for rendering.
     broadcastNote(note);
 
     try {

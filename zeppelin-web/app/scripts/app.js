@@ -62,7 +62,12 @@ function getRestApiBase() {
   if (port === 3333 || port === 9000) {
     port = 8080;
   }
-  return location.protocol+"//"+location.hostname+":"+port+"/api";
+  return location.protocol+"//"+getHostname()+":"+port+"/api";
+}
+
+function getHostname() {
+  //return "192.168.99.100";
+  return location.hostname;
 }
 
 /**
@@ -99,7 +104,7 @@ angular
   .config(function ($routeProvider, WebSocketProvider) {
     WebSocketProvider
       .prefix('')
-      .uri(getWebsocketProtocol() + '://' + location.hostname + ':' + getPort());
+      .uri(getWebsocketProtocol() + '://' + getHostname() + ':' + getPort());
 
     $routeProvider
       .when('/', {

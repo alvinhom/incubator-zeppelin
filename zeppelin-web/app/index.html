@@ -54,7 +54,7 @@ limitations under the License.
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="navbar navbar-inverse navbar-fixed-top" style="display: none;" role="navigation" ng-class="{'displayNavBar': !asIframe}">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="display: none;" role="navigation" ng-class="{'displayNavBar': asIframe}">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -81,7 +81,7 @@ limitations under the License.
               <a href="#/interpreter">Interpreter</a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right" style="margin-top:10px; margin-right:5px;">            
+          <ul class="nav navbar-nav navbar-right" style="margin-top:10px; margin-right:5px;">
             <li class="server-status">
                 <i class="fa fa-circle" ng-class="{'server-connected':connected, 'server-disconnected':!connected }"></i>
                 <span ng-show="connected">Connected</span>
